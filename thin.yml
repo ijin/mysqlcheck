@@ -1,0 +1,12 @@
+environment: production
+chdir: /var/www/mysqlcheck
+address: 0.0.0.0
+user: www-data
+group: www-data
+port: 9200
+pid: /var/run/sinatra/sinatra.pid
+rackup: /var/www/mysqlcheck/config.ru
+max_conns: 1024
+timeout: 30
+max_persistent_conns: 512
+daemonize: true

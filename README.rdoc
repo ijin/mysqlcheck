@@ -1,0 +1,21 @@
+= mysqlcheck
+
+A sinatra app that checks the MySQL server health and replications status,
+returning HTTP status codes.
+
+== Dependencies
+
+$ apt-get install ruby-dev libmysqlclient-dev librack-ruby
+$ gem install dbi dbd-mysql rack sinatra thin
+
+== Configuration
+
+* create mysql user
+  mysql> grant select, replication client on *.* to mysqlchkuser@localhost identified by 'mysqlchkpass';
+* set user/pass in app.rb
+
+== To start/stop
+
+$ thin start -C /var/www/mysqlcheck/thin.yml
+$ thin stop -C /var/www/mysqlcheck/thin.yml
+
